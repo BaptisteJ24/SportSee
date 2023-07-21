@@ -1,0 +1,40 @@
+.nutriment-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 5px;
+  background: #fbfbfb;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.02);
+  padding: 30px;
+
+  &__icon {
+    width: 60px;
+    height: 60px;
+    margin-right: 25px;
+    background-color: rgba(get-color('color-primary'), 0.066125);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10%;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2px;
+
+    &__title {
+      font-size: map-get($font-size, 14px);
+      font-weight: 500;
+      color: get-color('color-quinary');
+    }
+
+    &__value {
+      font-size: map-get($font-size, 20px);
+      font-weight: 700;
+      color: get-color('color-tertiary');
+    }
+  }
+}

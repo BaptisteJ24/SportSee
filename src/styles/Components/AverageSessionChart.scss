@@ -1,0 +1,26 @@
+.average-session-chart {
+  border-radius: 5px;
+  background: get-color(color-primary);
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.02);
+  width: 265px;
+  height: 265px;
+  padding: 30px 5px;
+
+  &__title {
+    margin: 0 0 0 30px;
+    font-size: map-get($font-size, 15px);
+    opacity: 0.5;
+    color: get-color(color-secondary);
+    white-space: pre-line;
+  }
+
+  &__tooltip {
+    width: 39px;
+    height: 25px;
+    background-color: get-color(color-secondary);
+    color: get-color(color-quaternary);
+    font-size: map-get($font-size, 9px);
+    text-align: center;
+    line-height: 25px;
+  }
+}

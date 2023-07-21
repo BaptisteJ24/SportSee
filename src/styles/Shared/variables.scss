@@ -1,0 +1,45 @@
+// Maps
+
+$breakpoint: (
+  // Breakpoints
+  tablet: 768px,
+  desktop: 1024px,
+  large-screen: 1200px,
+  extra-large-screen: 1400px
+);
+
+$color: (
+  // Colors
+  red: #ff0000,
+  white: #fff,
+  charcoal: #282d30,
+  black: #020203,
+  grey: #74798c
+);
+
+$color-name: (
+  color-primary: map-get($color, red),
+  color-secondary: map-get($color, white),
+  color-tertiary: map-get($color, charcoal),
+  color-quaternary: map-get($color, black),
+  color-quinary: map-get($color, grey),
+);
+
+$font-size: (
+  // Font Size
+  7px: 0.4375rem,
+  8px: 0.5rem,
+  9px: 0.5625rem,
+  12px: 0.75rem,
+  14px: 0.875rem,
+  15px: 0.9375rem,
+  18px: 1.125rem,
+  20px: 1.25rem,
+  24px: 1.5rem,
+  26px: 1.625rem,
+  48px: 3rem
+);
+
+// List
+
+// Variables

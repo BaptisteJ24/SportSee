@@ -1,0 +1,17 @@
+@import './Shared/variables.scss';
+@import './Shared/mixins.scss';
+@import './Shared/functions.scss';
+@import './Shared/animations.scss';
+
+@import './Base/reset.scss';
+
+@import './Layout/Header.scss';
+@import './Layout/Sidebar.scss';
+
+@import './Components/Loader.scss';
+@import './Components/NutrimentCard.scss';
+@import './Components/DailyActivityChart.scss';
+@import './Components/AverageSessionChart.scss';
+
+@import './Pages/Home.scss';
+@import './Pages/Dashboard.scss';
