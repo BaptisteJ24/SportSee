@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: space-between;
   background: get-color('color-quaternary');
-  width: 120px;
+  min-width: 120px;
   padding: calc(92px + 20vh) 0 100px;
 
   &__list {

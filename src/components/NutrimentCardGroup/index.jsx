@@ -3,24 +3,24 @@ import NutrimentCard from '../NutrimentCard';
 import React from 'react';
 
 const nutrimentsName = {
-  calorieCount: 'Calories',
-  proteinCount: 'Protéines',
-  carbohydrateCount: 'Glucides',
-  lipidCount: 'Lipides',
+  calories: 'Calories',
+  proteins: 'Protéines',
+  carbohydrates: 'Glucides',
+  lipids: 'Lipides',
 };
 
 const nutrimentsIcon = {
-  calorieCount: './../src/assets/energy.svg',
-  proteinCount: './../src/assets/chicken.svg',
-  carbohydrateCount: './../src/assets/apple.svg',
-  lipidCount: './../src/assets/cheeseburger.svg',
+  calories: './../src/assets/energy.svg',
+  proteins: './../src/assets/chicken.svg',
+  carbohydrates: './../src/assets/apple.svg',
+  lipids: './../src/assets/cheeseburger.svg',
 };
 
 const nutrimentsUnit = {
-  calorieCount: 'kCal',
-  proteinCount: 'g',
-  carbohydrateCount: 'g',
-  lipidCount: 'g',
+  calories: 'kCal',
+  proteins: 'g',
+  carbohydrates: 'g',
+  lipids: 'g',
 };
 
 const NutrimentCardGroup = ({ nutriments }) => {
@@ -43,10 +43,10 @@ const NutrimentCardGroup = ({ nutriments }) => {
 
 NutrimentCardGroup.propTypes = {
   nutriments: PropTypes.shape({
-    calorieCount: PropTypes.number.isRequired,
-    proteinCount: PropTypes.number.isRequired,
-    carbohydrateCount: PropTypes.number.isRequired,
-    lipidCount: PropTypes.number.isRequired,
+    calories: PropTypes.number.isRequired,
+    proteins: PropTypes.number.isRequired,
+    carbohydrates: PropTypes.number.isRequired,
+    lipids: PropTypes.number.isRequired,
   }).isRequired,
 };
 

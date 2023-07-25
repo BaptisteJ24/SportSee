@@ -11,9 +11,9 @@ import PropTypes from 'prop-types';
 const AverageSessionChart = ({ data }) => {
   const day = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
 
-  const myData = data.sessions.map((session, index) => ({
+  const myData = data.map((session, index) => ({
     day: day[index],
-    sessionLength: session.sessionLength,
+    duration: session.duration,
   }));
 
   return (
@@ -37,7 +37,7 @@ const AverageSessionChart = ({ data }) => {
               if (active) {
                 return (
                   <p className="average-session-chart__tooltip">
-                    {`${payload[0].payload.sessionLength} min`}
+                    {`${payload[0].value} min`}
                   </p>
                 );
               }
@@ -46,9 +46,10 @@ const AverageSessionChart = ({ data }) => {
           />
           <Line
             type="monotone"
-            dataKey="sessionLength"
+            dataKey="duration"
             stroke="#FFFFFF"
             yAxisId={0}
+            dot={false}
           />
         </LineChart>
       </ResponsiveContainer>
@@ -57,7 +58,11 @@ const AverageSessionChart = ({ data }) => {
 };
 
 AverageSessionChart.propTypes = {
-  data: PropTypes.object.isRequired,
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      duration: PropTypes.number.isRequired,
+    }),
+  ).isRequired,
 };
 
 export default AverageSessionChart;

@@ -1,0 +1,50 @@
+.goal-chart {
+  border-radius: 5px;
+  background: #fbfbfb;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.02);
+  width: 265px;
+  height: 265px;
+  padding: 30px 5px;
+  position: relative;
+
+  &__title {
+    font-size: map-get($font-size, 15px);
+    color: get-color(color-quaternary);
+    position: absolute;
+    top: 24px;
+    left: 30px;
+  }
+
+  .recharts-default-legend {
+    .recharts-surface {
+      display: none !important;
+    }
+  }
+
+  &__legend {
+    color: get-color(color-quinary);
+    font-size: map-get($font-size, 16px);
+    background-color: #ffffff;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    position: relative;
+
+    &__value {
+      font-size: map-get($font-size, 26px);
+      font-weight: 700;
+      color: get-color(color-tertiary);
+    }
+  }
+
+  &__circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    stroke: get-color(color-secondary);
+    fill: get-color(color-secondary);
+  }
+}
