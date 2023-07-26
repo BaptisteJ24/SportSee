@@ -10,15 +10,14 @@ const routes = {
 /**
  * description: Fetches data from url
  * @param {string} url - The url to fetch data from
- * @returns {object} - The data fetched
+ * @return {object} - The data fetched
  * @throws {Error} - The error thrown by fetch
  * @async
  */
 const fetchData = async (url) => {
   try {
-    const response = await fetch(url);
-    const data = await response.json();
-    return data;
+    const response = await (await fetch(url)).json();
+    return response;
   } catch (error) {
     throw new Error(`Error fetching data: ${error}`);
   }
@@ -27,7 +26,7 @@ const fetchData = async (url) => {
 /**
  * description: Fetches user data from the API
  * @param {number} id - The user id
- * @returns {object} - The user data
+ * @return {object} - The user data
  * @throws {Error} - The error thrown by fetchData
  * @async
  */
@@ -39,7 +38,7 @@ const getUser = async (id) => {
 /**
  * description: Fetches user activity data from the API
  * @param {number} id - The user id
- * @returns {object} - The user activity data
+ * @return {object} - The user activity data
  * @throws {Error} - The error thrown by fetchData
  * @async
  */
@@ -51,7 +50,7 @@ const getUserActivity = async (id) => {
 /**
  * description: Fetches user average session data from the API
  * @param {number} id - The user id
- * @returns {object} - The user average session data
+ * @return {object} - The user average session data
  * @throws {Error} - The error thrown by fetchData
  * @async
  */
@@ -65,7 +64,7 @@ const getUserAverageSession = async (id) => {
 /**
  * description: Fetches user performance data from the API
  * @param {number} id - The user id
- * @returns {object} - The user performance data
+ * @return {object} - The user performance data
  * @throws {Error} - The error thrown by fetchData
  * @async
  */

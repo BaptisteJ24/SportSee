@@ -14,7 +14,7 @@ import {
  * @param {object} activity
  * @param {object} averageSession
  * @param {object} performance
- * @returns {object} userData
+ * @return {object} userData
  */
 class User {
   constructor(
@@ -39,7 +39,7 @@ class User {
 /**
  * description: Get user data from API
  * @param {number} id
- * @returns {object} formattedUserData
+ * @return {object} formattedUserData
  */
 const getUserData = async (id) => {
   const user = await getUser(id);
@@ -64,41 +64,50 @@ const getUserData = async (id) => {
 /**
  * description: Format user data for front-end
  * @param {object} data
- * @returns {object} formattedUserData
+ * @return {object} formattedUserData
  */
 const formatUserData = async (data) => {
+  const {
+    id,
+    name,
+    todayScore,
+    nutriments,
+    activity,
+    averageSession,
+    performance,
+  } = data;
+
   const formattedUserData = {
-    id: data.id,
-    name: data.name.firstName,
-    todayScore: data.todayScore * 100,
+    id,
+    name: name.firstName,
+    todayScore: todayScore * 100,
     nutriments: {
-      calories: data.nutriments.calorieCount,
-      proteins: data.nutriments.proteinCount,
-      carbohydrates: data.nutriments.carbohydrateCount,
-      lipids: data.nutriments.lipidCount,
+      calories: nutriments.calorieCount,
+      proteins: nutriments.proteinCount,
+      carbohydrates: nutriments.carbohydrateCount,
+      lipids: nutriments.lipidCount,
     },
-    activity: data.activity.map((session) => {
+    activity: activity.map((session) => {
       return {
         kilogram: session.kilogram,
         calories: session.calories,
       };
     }),
-    averageSession: data.averageSession.map((session) => {
+    averageSession: averageSession.map((session) => {
       return {
         duration: session.sessionLength,
       };
     }),
-    performance: data.performance.data
+    performance: performance.data
       .map((kind, index) => {
         return {
-          kind: data.performance.kind[index + 1],
+          kind: performance.kind[index + 1],
           value: kind.value,
         };
       })
       .slice()
       .reverse(),
   };
-  console.log(formattedUserData);
   return formattedUserData;
 };
 

@@ -9,19 +9,21 @@ import RadarChartPerformance from '../../components/Charts/RadarChart';
 import NutrimentCardGroup from '../../components/NutrimentCardGroup';
 import Loader from '../../components/Loader';
 import Error from '../Error';
+import mockedData from '../../mocks/mockedData.json';
+import { getDataByProperty, getDataById } from '../../utils/get';
 
 const Dashboard = () => {
   const { userId } = useParams();
   const parsedUserId = parseInt(userId);
+
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [needMock, setNeedMock] = useState(false);
 
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        setIsLoading(true);
-        const fetchedData = await userData(parsedUserId);
-        setData(fetchedData);
+        needMock ? usingMockedData() : usingApiData();
       } catch (error) {
         console.log(error);
       } finally {
@@ -30,13 +32,37 @@ const Dashboard = () => {
         }, 800);
       }
     };
+
+    const usingApiData = async () => {
+      try {
+        setIsLoading(true);
+        const fetchedData = await userData(parsedUserId);
+        setData(fetchedData);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    const usingMockedData = async () => {
+      try {
+        setData(
+          await getDataById(
+            await getDataByProperty(mockedData, 'USER'),
+            parsedUserId,
+          ),
+        );
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
     fetchUserData();
-  }, [parsedUserId]);
+  }, [parsedUserId, needMock]);
 
   if (isLoading) {
     return <Loader />;
   } else {
-    if (data && data.length !== 0) {
+    if (data && data.name) {
       return (
         <div className="dashboard">
           <Sidebar />
@@ -65,7 +91,12 @@ const Dashboard = () => {
         </div>
       );
     } else {
-      return <Error />;
+      return (
+        <Error
+          needMock={!needMock}
+          mockStateFunction={() => setNeedMock(true)}
+        />
+      );
     }
   }
 };
