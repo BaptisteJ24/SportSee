@@ -10,10 +10,10 @@ const nutrimentsName = {
 };
 
 const nutrimentsIcon = {
-  calories: './../src/assets/energy.svg',
-  proteins: './../src/assets/chicken.svg',
-  carbohydrates: './../src/assets/apple.svg',
-  lipids: './../src/assets/cheeseburger.svg',
+  calories: '/assets/energy.svg',
+  proteins: '/assets/chicken.svg',
+  carbohydrates: '/assets/apple.svg',
+  lipids: '/assets/cheeseburger.svg',
 };
 
 const nutrimentsUnit = {

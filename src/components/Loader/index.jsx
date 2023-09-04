@@ -1,4 +1,4 @@
-import icon from '../../assets/SportSee_logo.svg';
+import icon from '/assets/SportSee_logo.svg';
 
 const Loader = () => {
   return (

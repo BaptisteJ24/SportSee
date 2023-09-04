@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import karlPicture from './../../assets/karl.jpg';
-import ceciliaPicture from './../../assets/cecilia.jpg';
+import karlPicture from '/assets/karl.jpg';
+import ceciliaPicture from '/assets/cecilia.jpg';
 
 const Home = () => {
   return (

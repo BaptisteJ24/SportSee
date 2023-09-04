@@ -1,16 +1,16 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import userData from '../../utils/userDataModel';
-import Sidebar from '../../components/Sidebar';
-import DailyActivityChart from '../../components/Charts/DailyActivityChart';
-import AverageSessionChart from '../../components/Charts/AverageSessionChart';
-import GoalChart from '../../components/Charts/GoalChart';
-import RadarChartPerformance from '../../components/Charts/RadarChart';
-import NutrimentCardGroup from '../../components/NutrimentCardGroup';
-import Loader from '../../components/Loader';
-import Error from '../Error';
-import mockedData from '../../mocks/mockedData.json';
-import { getDataByProperty, getDataById } from '../../utils/get';
+import userData from './../../utils/userDataModel';
+import Sidebar from './../../components/Sidebar';
+import DailyActivityChart from './../../components/Charts/DailyActivityChart';
+import AverageSessionChart from './../../components/Charts/AverageSessionChart';
+import GoalChart from './../../components/Charts/GoalChart';
+import RadarChartPerformance from './../../components/Charts/RadarChart';
+import NutrimentCardGroup from './../../components/NutrimentCardGroup';
+import Loader from './../../components/Loader';
+import Error from './../Error';
+import mockedData from './../../mocks/mockedData.json';
+import { getDataByProperty, getDataById } from './../../utils/get';
 
 const Dashboard = () => {
   const { userId } = useParams();
