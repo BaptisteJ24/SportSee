@@ -21,7 +21,7 @@ const Dashboard = () => {
   const [needMock, setNeedMock] = useState(false);
 
   useEffect(() => {
-    const fetchUserData = async () => {
+    const fetchUserData = () => {
       try {
         needMock ? usingMockedData() : usingApiData();
       } catch (error) {
