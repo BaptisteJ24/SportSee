@@ -10,6 +10,6 @@ Compétences :
 
 Fait par : Baptiste JAN
 
-Disponible sur : à venir...
+Disponible sur : https://baptiste-jan-sportsee.netlify.app/
 
-Mis à jour le 11/07/23
+Mis à jour le 27/09/23
